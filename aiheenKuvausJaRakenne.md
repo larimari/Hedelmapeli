@@ -3,7 +3,11 @@
 **Käyttäjät:** Pelaaja
 
 **Käyttäjien toiminnot:** 
+
 -Pelaaminen, eli "pelaa" -napin painaminen
+
 Laajennuksessa:
+
 -Panoksen laittaminen ja korottaminen
+
 -Rahan nostaminen
