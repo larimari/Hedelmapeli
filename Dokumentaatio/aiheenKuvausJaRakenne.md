@@ -11,4 +11,4 @@ Laajennuksessa:
 - Panoksen laittaminen ja korottaminen
 - Rahan nostaminen
 
-![Luokkakaavio](/Users/maria/Hedelmapeli/Dokumentaatio/luokkakaavio.jpg)
+![Luokkakaavio](https://github.com/larimari/Hedelmapeli/blob/master/Dokumentaatio/luokkakaavio.jpg)
