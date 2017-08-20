@@ -35,7 +35,7 @@ public class Hedelma {
     public int getArvo() {
         return this.arvo;
     }
-
+    
     @Override
     public boolean equals(Object olio) { //vertaillaan hedelmiä
         if (olio == null) {

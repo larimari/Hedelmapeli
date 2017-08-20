@@ -67,8 +67,8 @@ public class RiviTest {
         tulostettavat.add(new Hedelma("tahti",2));
         
         rivi.setHedelmat(tulostettavat);
-        //rypale tahti (tämän kuuluisi olla tuossa)
-        assertEquals("", rivi.tulostaHedelmat()); //tuo ei nyt toimi oikein enkä tiedä miks
+
+        assertEquals("rypale tahti ", rivi.tulostaHedelmat());
     }
     
     @Test

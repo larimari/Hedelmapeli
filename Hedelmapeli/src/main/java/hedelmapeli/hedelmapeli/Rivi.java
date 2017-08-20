@@ -14,7 +14,7 @@ import java.util.Random;
  * @author maria
  */
 public class Rivi {        //rivi arpoo kolme hedelmää ja tarkistaa onko ne samat
-    private List<Hedelma> hedelmat;
+    public List<Hedelma> hedelmat;
     int voitto;
 
     public Rivi() {
@@ -43,27 +43,28 @@ public class Rivi {        //rivi arpoo kolme hedelmää ja tarkistaa onko ne sa
     }
     
     public String tulostaHedelmat() {
+        String kaikki = "";
         for (Hedelma hedelma: hedelmat) {
-            System.out.print(hedelma.getNimi() + " ");
+            kaikki += hedelma.getNimi() + " ";
         }
-        return "";
+        return kaikki;
     }
     
     public void tarkistaVoitto() { //kaydaan kaikki arvotut hedelmat lapi, jos samat -> voitto
-        for (int i = 0; i < hedelmat.size(); i++) {
-            Hedelma verrattava = hedelmat.get(i);
-            
-            for (Hedelma hedelma : hedelmat) {
-                verrattava.equals(hedelma);
-                
-                if (true) {                    //ei taida toimia ihan oikein
-                    voitto = hedelma.getArvo();
-                } else {
-                    voitto = 0; //ei voittoa
-                }
-            }
-        }
         
+        Hedelma eka = hedelmat.get(0);
+        Hedelma toinen = hedelmat.get(1);
+        Hedelma kolmas = hedelmat.get(2);
+        
+        if (eka.equals(toinen)) {        //tarkistetaan onko eka ja toka hedelmat samoja
+            if (eka.equals(kolmas)) {    //ja sitten onko eka ja kolmas samoja
+                voitto = eka.getArvo();
+            } else {
+                voitto = 0;
+            }
+        } else {
+            voitto = 0;
+        }
     }
     
     public void setVoitto(int voitto) {

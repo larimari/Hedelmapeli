@@ -7,7 +7,7 @@ package hedelmapeli.hedelmapeli;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
+import java.util.Scanner;
 
 /**
  *
@@ -16,15 +16,24 @@ import java.util.Random;
 public class Kone { //koneella on voitot, kaikki hedelmät ja niiden arvot
     int voitto;
     Rivi rivi;
-    private List<Hedelma> kaikkiHedelmat;
+    public List<Hedelma> kaikkiHedelmat;
+    Pelaaja pelaaja;
+    public Scanner lukija;
+    String nimi;
+    double panos;
+    double saldo;
 
     public Kone() {
         this.voitto = voitto;
         Rivi rivi = new Rivi();
-        this.kaikkiHedelmat = new ArrayList<>(); //kaikki hedelmät
+        this.kaikkiHedelmat = new ArrayList<>();            //kaikki hedelmät
+        this.lukija = new Scanner(System.in);
+        this.nimi = nimi;
+        this.saldo = saldo;
+        this.panos = panos;
     }
     
-    public void lisaaHedelma() { //lisataan listaan kaikki hedelmat
+    public void lisaaHedelma() {            //lisataan listaan kaikki hedelmat
         Hedelma tahti = new Hedelma("tahti", 10);
         kaikkiHedelmat.add(tahti);
         Hedelma vesimeloni = new Hedelma("vesimeloni", 9);
@@ -47,19 +56,46 @@ public class Kone { //koneella on voitot, kaikki hedelmät ja niiden arvot
         return this.kaikkiHedelmat;
     }
     
-    public void pelaa() { //pelaaminen
-        //pelaamaan pääsee jos on tarpeeksi rahaa
-        rivi.arvo(kaikkiHedelmat);
-        //rahoista vähennetään panos, joka on alussa vakio
-        rivi.tarkistaVoitto();
-        if (rivi.voitto == 0) { //jos ei ole 3 samaa hedelmää, kone ottaa itselleen listan ja tarkistaa
-            List<Hedelma> arvotutHedelmat = rivi.getHedelmat(); //muut kombinaatiot(ekstra?)
+    public void alkukysymykset() {
+        System.out.println("Tervetuloa pelaamaan Hedelmäpeliä!");
+        
+        System.out.println("Mikä on nimesi? ");
+        nimi = lukija.nextLine();
+        
+        System.out.println("Mikä on saldo? ");
+        saldo = lukija.nextDouble();
+        
+        this.pelaaja = new Pelaaja(nimi, saldo);            //luodaan pelaaja
+        
+        System.out.println("Mikä on panos? ");  //rahoista vähennetään panos, jota ei voi muuttaa
+        panos = lukija.nextDouble();     //eikä se vaikuta voittoon
+    }
+    
+    public void pelaa() {                                   //pelaaminen
+        lisaaHedelma();
+        alkukysymykset();
+        
+        while (saldo >= panos) {                //pelaamaan pääsee jos on tarpeeksi rahaa
+            
+            saldo = saldo - panos;
+            rivi.arvo(kaikkiHedelmat);
+            rivi.tulostaHedelmat();
+            rivi.tarkistaVoitto();              //voittaa vain jos on kolme samaa hedelmää
+        
+//          if (rivi.voitto == 0) { //jos ei ole 3 samaa hedelmää, kone ottaa itselleen listan ja tarkistaa
+//              List<Hedelma> arvotutHedelmat = rivi.getHedelmat(); //muut kombinaatiot(ekstra?)
+//          }
+            saldo = saldo + rivi.getVoitto();    //rahoihin lisätään voitto
+            
+            System.out.println("Jatketaanko? Y/N"); //pitää pystyä lopettamaan kesken
+            String vastaus = lukija.nextLine();
+            
+            if (vastaus.equals("N")) {
+                break;
+            }
         }
-        //rahoihin lisätään voitto
+        
+        System.out.println("Kiitos pelistä!");
+        System.out.println("Voittosi on " + saldo);
     }
-    
-    public void tarkistaRahat() {
-        //pitää vielä miettiä, miten kone tuntee pelaajan
-    }
-    
 }
