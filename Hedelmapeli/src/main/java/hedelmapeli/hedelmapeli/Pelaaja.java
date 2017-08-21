@@ -12,9 +12,9 @@ package hedelmapeli.hedelmapeli;
  */
 public class Pelaaja {
     String nimi;
-    double rahat;
+    int rahat;
 
-    public Pelaaja(String nimi, double rahat) {
+    public Pelaaja(String nimi, int rahat) {
         this.nimi = nimi;
         this.rahat = rahat;
     }
@@ -23,7 +23,7 @@ public class Pelaaja {
         this.nimi = nimi;
     }
     
-    public void setRahat(double rahat) {
+    public void setRahat(int rahat) {
         this.rahat = rahat;
     }
     

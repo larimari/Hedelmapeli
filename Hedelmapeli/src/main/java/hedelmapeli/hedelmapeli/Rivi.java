@@ -14,7 +14,7 @@ import java.util.Random;
  * @author maria
  */
 public class Rivi {        //rivi arpoo kolme hedelmää ja tarkistaa onko ne samat
-    public List<Hedelma> hedelmat;
+    private List<Hedelma> hedelmat;
     int voitto;
 
     public Rivi() {
