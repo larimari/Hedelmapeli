@@ -9,6 +9,11 @@ package hedelmapeli.hedelmapeli;
  *
  * @author maria
  */
+
+/**
+ * Hedelmällä on nimi ja arvo. Sekä niitä verrataan täällä.
+ * 
+ */
 public class Hedelma {
     private String nimi;
     private int arvo;

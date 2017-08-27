@@ -10,6 +10,11 @@ package hedelmapeli.hedelmapeli;
  *
  * @author maria
  */
+
+/**
+ * Luodaan pelaaja jolla on nimi ja rahat.
+ * 
+ */
 public class Pelaaja {
     String nimi;
     int rahat;

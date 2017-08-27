@@ -16,6 +16,7 @@ public class Main {
 
     /**
      * @param args the command line arguments
+     * Täällä käynistetään peli.
      */
     public static void main(String[] args) {
         Kone kone = new Kone();

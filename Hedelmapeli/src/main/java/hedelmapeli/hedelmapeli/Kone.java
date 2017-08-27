@@ -13,7 +13,13 @@ import java.util.Scanner;
  *
  * @author maria
  */
-public class Kone { //koneella on voitot, kaikki hedelmät ja niiden arvot
+
+/**
+ * Koneella on voitot, kaikki hedelmät ja niiden arvot. Sekä pelaaminen tapahtuu
+ * täällä. 
+ * 
+ */
+public class Kone {
     int voitto;
     Rivi rivi;
     private List<Hedelma> kaikkiHedelmat;
@@ -32,8 +38,10 @@ public class Kone { //koneella on voitot, kaikki hedelmät ja niiden arvot
         this.saldo = saldo;
         this.panos = panos;
     }
-    
-    public void lisaaHedelma() {            //lisataan listaan kaikki hedelmat
+    /**
+     * Listaan lisätään kaikki hedelmät.
+     */
+    public void lisaaHedelma() {            
         Hedelma tahti = new Hedelma("tahti", 10);
         kaikkiHedelmat.add(tahti);
         Hedelma vesimeloni = new Hedelma("vesimeloni", 9);
@@ -56,6 +64,10 @@ public class Kone { //koneella on voitot, kaikki hedelmät ja niiden arvot
         return this.kaikkiHedelmat;
     }
     
+    /**
+     * Tässä luodaan pelaaja sekä asetetaan saldo ja panos.
+     */
+    
     public void alkukysymykset() {
         System.out.println("Tervetuloa pelaamaan Hedelmäpeliä!");
         
@@ -71,7 +83,10 @@ public class Kone { //koneella on voitot, kaikki hedelmät ja niiden arvot
         panos = Integer.parseInt(lukija.nextLine());            //eikä se vaikuta voittoon
     }
     
-    public void pelaa() { //pelaaminen
+    /**
+     * Tässä tapahtuu pelaaminen. Saldoon lisätään mahdollinen voitto.
+     */
+    public void pelaa() { 
         lukija = new Scanner(System.in);
         lisaaHedelma();
         alkukysymykset();
@@ -83,10 +98,10 @@ public class Kone { //koneella on voitot, kaikki hedelmät ja niiden arvot
             System.out.println(rivi.tulostaHedelmat());
             rivi.tarkistaVoitto();              //voittaa vain jos on kolme samaa hedelmää
         
-          if (rivi.voitto == 0) { //jos ei ole 3 samaa hedelmää, kone ottaa itselleen listan ja tarkistaa
-              List<Hedelma> arvotutHedelmat = rivi.getHedelmat(); //muut kombinaatiot(ekstra?)
-          }
-            saldo = saldo + rivi.getVoitto();       //rahoihin lisätään voitto
+//          if (rivi.voitto == 0) { //jos ei ole 3 samaa hedelmää, kone ottaa itselleen listan ja tarkistaa
+//              List<Hedelma> arvotutHedelmat = rivi.getHedelmat(); //muut kombinaatiot(ekstra?)
+//          }
+            saldo = saldo + (rivi.getVoitto() * panos);       //rahoihin lisätään voitto
             
             System.out.println("Jatketaanko? Y/N"); //pitää pystyä lopettamaan kesken ja nostaa rahat
             String vastaus = lukija.nextLine();

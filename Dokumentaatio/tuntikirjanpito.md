@@ -10,3 +10,4 @@ Päivä | Tunnit | Kuvaus
 18.08.2017 | 4h | Koodin korjaamista ja edistämistä
 20.08.2017 | 4h | Graafisen käyttöliittymän kertaamista ja koodin korjaamista.
 21.08.2017 | 3h | Työn edistämistä
+27.08.2017 | 3h | Sekvenssikaaviot, dokumentaatio
