@@ -11,3 +11,4 @@ Päivä | Tunnit | Kuvaus
 20.08.2017 | 4h | Graafisen käyttöliittymän kertaamista ja koodin korjaamista.
 21.08.2017 | 3h | Työn edistämistä
 27.08.2017 | 3h | Sekvenssikaaviot, dokumentaatio
+31.08.2017 | 5h | Graafisen käyttöliittymän tekemistä

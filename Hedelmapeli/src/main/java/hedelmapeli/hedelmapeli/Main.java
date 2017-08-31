@@ -19,8 +19,8 @@ public class Main {
      * Täällä käynistetään peli.
      */
     public static void main(String[] args) {
-        Kone kone = new Kone();
-        
-        kone.pelaa();
+//        Kone kone = new Kone();
+//        
+//        kone.pelaa();
     }
 }

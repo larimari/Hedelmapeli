@@ -24,7 +24,6 @@ public class Rivi {
 
     public Rivi() {
         this.hedelmat = new ArrayList<>(); //luodaan lista, jossa on arvottu kolme hedelmää
-        this.voitto = voitto;
     }
     /**
      * Hedelmät arvotaan listasta, jossa on kaikki hedemät.

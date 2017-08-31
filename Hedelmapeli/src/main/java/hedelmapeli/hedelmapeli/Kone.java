@@ -34,9 +34,8 @@ public class Kone {
         rivi = new Rivi();
         this.kaikkiHedelmat = new ArrayList<>();            //kaikki hedelmät
         this.lukija = new Scanner(System.in);
-        this.nimi = nimi;
-        this.saldo = saldo;
-        this.panos = panos;
+        this.saldo = 1000;
+        this.panos = 1;
     }
     /**
      * Listaan lisätään kaikki hedelmät.
@@ -89,13 +88,14 @@ public class Kone {
     public void pelaa() { 
         lukija = new Scanner(System.in);
         lisaaHedelma();
-        alkukysymykset();
+//        alkukysymykset();
         
-        while (saldo >= panos) {                //pelaamaan pääsee jos on tarpeeksi rahaa
+        if (saldo >= panos) {                //pelaamaan pääsee jos on tarpeeksi rahaa
             
             saldo = saldo - panos;
             rivi.arvo(kaikkiHedelmat);
-            System.out.println(rivi.tulostaHedelmat());
+            
+            //System.out.println(rivi.tulostaHedelmat());
             rivi.tarkistaVoitto();              //voittaa vain jos on kolme samaa hedelmää
         
 //          if (rivi.voitto == 0) { //jos ei ole 3 samaa hedelmää, kone ottaa itselleen listan ja tarkistaa
@@ -103,15 +103,36 @@ public class Kone {
 //          }
             saldo = saldo + (rivi.getVoitto() * panos);       //rahoihin lisätään voitto
             
-            System.out.println("Jatketaanko? Y/N"); //pitää pystyä lopettamaan kesken ja nostaa rahat
-            String vastaus = lukija.nextLine();
-            
-            if (vastaus.equals("N")) {
-                break;
-            }
+//            System.out.println("Jatketaanko? Y/N"); //pitää pystyä lopettamaan kesken ja nostaa rahat
+//            String vastaus = lukija.nextLine();
+//            
+//            if (vastaus.equals("N")) {
+//                break;
+//            }
         }
         
-        System.out.println("Kiitos pelistä!");
-        System.out.println("Voittosi on " + saldo);
+//        System.out.println("Kiitos pelistä!");
+//        System.out.println("Voittosi on " + saldo);
     }
+    
+    public void setSaldo(int saldo) {
+        this.saldo = saldo;
+    }
+    
+    public void setPanos(int panos) {
+        this.panos = panos;
+    }
+    
+    public int getSaldo() {
+        return this.saldo;
+    }
+    
+    public int getPanos() {
+        return this.panos;
+    }
+
+    public Rivi getRivi() {
+        return rivi;
+    }
+    
 }
