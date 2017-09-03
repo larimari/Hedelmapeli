@@ -45,4 +45,6 @@ public class KoneTest {
         
         assertEquals(8,this.kone.getHedelmat().size());
     }
+    
+    
 }

@@ -7,3 +7,9 @@ Päivä | Tunnit | Kuvaus
 10.08.2017 | 2h | Koodin edistämistä
 13.08.2017 | 6h | Kansioiden ja raporttien luomista. Koodin ja testien kirjoittamista.
 14.08.2017 | 3h | Samaa kuin eilen ja sen lisäksi tiedostojen lisäämistä githubiin.
+18.08.2017 | 4h | Koodin korjaamista ja edistämistä
+20.08.2017 | 4h | Graafisen käyttöliittymän kertaamista ja koodin korjaamista.
+21.08.2017 | 3h | Työn edistämistä.
+27.08.2017 | 3h | Sekvenssikaaviot, dokumentaatio
+31.08.2017 | 5h | Graafisen käyttöliittymän tekemistä
+03.09.2017 | 6h | Työn muokkaamista, dokumentaation ja aihemäärittelyn lisäämistä

@@ -7,24 +7,40 @@ package hedelmapeli.hedelmapeli;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
+import java.util.Scanner;
 
 /**
  *
  * @author maria
  */
-public class Kone { //koneella on voitot, kaikki hedelmät ja niiden arvot
+
+/**
+ * Koneella on voitot, kaikki hedelmät ja niiden arvot. Sekä pelaaminen tapahtuu
+ * täällä. 
+ * 
+ */
+public class Kone {
     int voitto;
     Rivi rivi;
     private List<Hedelma> kaikkiHedelmat;
+    Pelaaja pelaaja;
+    public Scanner lukija;
+    String nimi;
+    int panos;
+    int saldo;
 
     public Kone() {
         this.voitto = voitto;
-        Rivi rivi = new Rivi();
-        this.kaikkiHedelmat = new ArrayList<>(); //kaikki hedelmät
+        rivi = new Rivi();
+        this.kaikkiHedelmat = new ArrayList<>();            //kaikki hedelmät
+        this.lukija = new Scanner(System.in);
+        this.saldo = 1000;
+        this.panos = 1;
     }
-    
-    public void lisaaHedelma() { //lisataan listaan kaikki hedelmat
+    /**
+     * Listaan lisätään kaikki hedelmät.
+     */
+    public void lisaaHedelma() {            
         Hedelma tahti = new Hedelma("tahti", 10);
         kaikkiHedelmat.add(tahti);
         Hedelma vesimeloni = new Hedelma("vesimeloni", 9);
@@ -47,19 +63,76 @@ public class Kone { //koneella on voitot, kaikki hedelmät ja niiden arvot
         return this.kaikkiHedelmat;
     }
     
-    public void pelaa() { //pelaaminen
-        //pelaamaan pääsee jos on tarpeeksi rahaa
-        rivi.arvo(kaikkiHedelmat);
-        //rahoista vähennetään panos, joka on alussa vakio
-        rivi.tarkistaVoitto();
-        if (rivi.voitto == 0) { //jos ei ole 3 samaa hedelmää, kone ottaa itselleen listan ja tarkistaa
-            List<Hedelma> arvotutHedelmat = rivi.getHedelmat(); //muut kombinaatiot(ekstra?)
+    /**
+     * Tässä luodaan pelaaja sekä asetetaan saldo ja panos.
+     */
+    
+//    public void alkukysymykset() {
+//        System.out.println("Tervetuloa pelaamaan Hedelmäpeliä!");
+//        
+//        System.out.println("Mikä on nimesi? ");
+//        nimi = lukija.nextLine();
+//        
+//        System.out.println("Mikä on saldo? (kokonaisluku)");
+//        saldo = Integer.parseInt(lukija.nextLine());
+//        
+//        this.pelaaja = new Pelaaja(nimi, saldo);            //luodaan pelaaja
+//        
+//        System.out.println("Mikä on panos? (kokonaisluku)");  //rahoista vähennetään panos, jota ei voi muuttaa
+//        panos = Integer.parseInt(lukija.nextLine());            //eikä se vaikuta voittoon
+//    }
+//    
+    /**
+     * Tässä tapahtuu pelaaminen. Saldoon lisätään mahdollinen voitto.
+     */
+    public void pelaa() { 
+        lukija = new Scanner(System.in);
+        lisaaHedelma();
+//        alkukysymykset();
+        
+        if (saldo >= panos) {                //pelaamaan pääsee jos on tarpeeksi rahaa
+            
+            saldo = saldo - panos;
+            rivi.arvo(kaikkiHedelmat);
+            
+            //System.out.println(rivi.tulostaHedelmat());
+            rivi.tarkistaVoitto();              //voittaa vain jos on kolme samaa hedelmää
+        
+//          if (rivi.voitto == 0) { //jos ei ole 3 samaa hedelmää, kone ottaa itselleen listan ja tarkistaa
+//              List<Hedelma> arvotutHedelmat = rivi.getHedelmat(); //muut kombinaatiot(ekstra?)
+//          }
+            saldo = saldo + (rivi.getVoitto() * panos);       //rahoihin lisätään voitto
+            
+//            System.out.println("Jatketaanko? Y/N"); //pitää pystyä lopettamaan kesken ja nostaa rahat
+//            String vastaus = lukija.nextLine();
+//            
+//            if (vastaus.equals("N")) {
+//                break;
+//            }
         }
-        //rahoihin lisätään voitto
+        
+//        System.out.println("Kiitos pelistä!");
+//        System.out.println("Voittosi on " + saldo);
     }
     
-    public void tarkistaRahat() {
-        //pitää vielä miettiä, miten kone tuntee pelaajan
+    public void setSaldo(int saldo) {
+        this.saldo = saldo;
+    }
+    
+    public void setPanos(int panos) {
+        this.panos = panos;
+    }
+    
+    public int getSaldo() {
+        return this.saldo;
+    }
+    
+    public int getPanos() {
+        return this.panos;
+    }
+
+    public Rivi getRivi() {
+        return rivi;
     }
     
 }

@@ -9,6 +9,11 @@ package hedelmapeli.hedelmapeli;
  *
  * @author maria
  */
+
+/**
+ * Hedelmällä on nimi ja arvo. Sekä niitä verrataan täällä.
+ * 
+ */
 public class Hedelma {
     private String nimi;
     private int arvo;
@@ -35,7 +40,7 @@ public class Hedelma {
     public int getArvo() {
         return this.arvo;
     }
-
+    
     @Override
     public boolean equals(Object olio) { //vertaillaan hedelmiä
         if (olio == null) {

@@ -1,0 +1,5 @@
+Ohjelmassa on logiikan osalta neljä luokkaa, jokaisella luokalla on oma tehtävänsä. "Kone" luokassa kaikki luokat yhdistyvät. Täällä tapahtuu tiedon yhdistäminen ja lopullinen pelaaminen. "Kone" luokka hakee tiedon luokista "Rivi", "Hedelma" ja "Pelaaja".
+
+Luokka "Hedelma" on hyvin yksinkertainen, siellä luodaan jokainen hedelmä. Näitä hedelmiä sitten arvotaan luokassa "Rivi". Siellä kaikista hedelmistä valitaan tässä tapauksessa satunnaisesti kolme hedelmää, jotka annetaan sitten luokalle "Kone". 
+
+Tässä minun tapauksessa sattui nyt menemään niin, että luokka "Pelaaja" on turha. Sillä ei nyt tehdä mitään, mutta laajentaessa ohjelmaa sillä voi olla käyttöä. Siinä luokassa luodaan pelaaja, jolla on rahata ja nimi. Nyt ohjelmani ei tarvitse tietää pelaajan nimeä ja rahat ovat "Kone" luokan tiedossa.
