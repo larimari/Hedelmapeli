@@ -3,7 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+<<<<<<< HEAD
 package gui;
+=======
+package GUI;
+>>>>>>> 6832b747b707d3c1f85ae3a99bb4ba7178a2ba36
 
 import hedelmapeli.hedelmapeli.Hedelma;
 import hedelmapeli.hedelmapeli.Kone;
@@ -104,6 +108,10 @@ public class HedelmapeliGui extends javax.swing.JFrame {
         voittoteksti.setText("Voitto");
         voittoteksti.setEditable(false);
 
+<<<<<<< HEAD
+=======
+        hedelmat.setIcon(new javax.swing.ImageIcon("/Users/maria/Desktop/Näyttökuva 2017-08-31 kello 19.00.23.png")); // NOI18N
+>>>>>>> 6832b747b707d3c1f85ae3a99bb4ba7178a2ba36
         hedelmat.setToolTipText("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

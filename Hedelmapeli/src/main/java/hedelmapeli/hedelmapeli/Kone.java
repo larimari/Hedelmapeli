@@ -67,6 +67,7 @@ public class Kone {
      * Tässä luodaan pelaaja sekä asetetaan saldo ja panos.
      */
     
+<<<<<<< HEAD
 //    public void alkukysymykset() {
 //        System.out.println("Tervetuloa pelaamaan Hedelmäpeliä!");
 //        
@@ -82,6 +83,23 @@ public class Kone {
 //        panos = Integer.parseInt(lukija.nextLine());            //eikä se vaikuta voittoon
 //    }
 //    
+=======
+    public void alkukysymykset() {
+        System.out.println("Tervetuloa pelaamaan Hedelmäpeliä!");
+        
+        System.out.println("Mikä on nimesi? ");
+        nimi = lukija.nextLine();
+        
+        System.out.println("Mikä on saldo? (kokonaisluku)");
+        saldo = Integer.parseInt(lukija.nextLine());
+        
+        this.pelaaja = new Pelaaja(nimi, saldo);            //luodaan pelaaja
+        
+        System.out.println("Mikä on panos? (kokonaisluku)");  //rahoista vähennetään panos, jota ei voi muuttaa
+        panos = Integer.parseInt(lukija.nextLine());            //eikä se vaikuta voittoon
+    }
+    
+>>>>>>> 6832b747b707d3c1f85ae3a99bb4ba7178a2ba36
     /**
      * Tässä tapahtuu pelaaminen. Saldoon lisätään mahdollinen voitto.
      */
@@ -113,12 +131,21 @@ public class Kone {
         
 //        System.out.println("Kiitos pelistä!");
 //        System.out.println("Voittosi on " + saldo);
+<<<<<<< HEAD
     }
     
     public void setSaldo(int saldo) {
         this.saldo = saldo;
     }
     
+=======
+    }
+    
+    public void setSaldo(int saldo) {
+        this.saldo = saldo;
+    }
+    
+>>>>>>> 6832b747b707d3c1f85ae3a99bb4ba7178a2ba36
     public void setPanos(int panos) {
         this.panos = panos;
     }

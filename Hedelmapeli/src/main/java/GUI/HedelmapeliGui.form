@@ -186,6 +186,12 @@
     </Component>
     <Component class="javax.swing.JLabel" name="hedelmat">
       <Properties>
+<<<<<<< HEAD
+=======
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="/Users/maria/Desktop/N&#xe4;ytt&#xf6;kuva 2017-08-31 kello 19.00.23.png"/>
+        </Property>
+>>>>>>> 6832b747b707d3c1f85ae3a99bb4ba7178a2ba36
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>

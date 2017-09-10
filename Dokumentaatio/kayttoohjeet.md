@@ -1,0 +1,3 @@
+- Aloita peli. Siinä on valmiiksi merkitty saldo ja panos. 
+- Paina nappia "Pelaa". 
+- Pelaa ja nauti voitosta!
